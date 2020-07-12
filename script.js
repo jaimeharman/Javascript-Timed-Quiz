@@ -1,25 +1,57 @@
-var div = document.querySelector("");
-var startBtn = document.querySelector(".btn");
-var jumbotron = document.querySelector(".jumbo")
+var currentQuestion = 0; 
+var score = 0; 
+var totQuestions = questions.length; 
 
-//Quiz Questions and Answers *array
-//Decide how many questions
+var container = document.getElementById('quizContainer');
+var questionEl = document.getElementById('question');
+var opt1 = document.getElementById('opt1');
+var opt2 = document.getElementById('opt2');
+var opt3 = document.getElementById('opt3');
+var nextButton = document.getElementById('nextButton');
+var resultCont = document.getElementById('result'); 
+
+function loadQuestion (questionIndex) {
+    
+}
+
+               
 
 
-//Start button with click event
-//Quiz function
+
+
+
+
+
+
+
+//Quiz Questions and Answers 
+
+
+
+
+
+
+
+
+
+
+
+
 
 //timed quiz function
-//timer counts down
-//click event for answer buttons
 
-// if question is answered wrong, return wrong, deduct time and move to next question
-// else return correct and move to next question
+var secondsLeft = 90;
 
-// Score... stylized box with input
-    // Input for name + display score... prevent default possibly used here
-    //High score display
-// Input for name + display score... prevent default possibly used here
-//High score display
+function setTimer() {
+
+    var countdown = setInterval(function () {
+        secondsLeft--;
+        timerElement.textContent = "Time: " + secondsLeft;
+
+        if (secondsLeft === 0 || questionNumber === questions.length) {
+            clearInterval(countdown);
+                   }
+    }, 1000);
+}
 
 
