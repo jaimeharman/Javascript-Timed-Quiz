@@ -1,35 +1,48 @@
 <!DOCTYPE html>
-  <html>
-    <head>
-      <title>Quiz</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="style.css"> 
-    </head>
-    <body>
-      <div id="quizContainer" class="container">
-        <div class="title">Javascript Quiz</div>
-        <div id="timer"></div>
-        <div id="question" class="question"></div>
-          <label class="option"><input type="radio" name="option" value="1" /> <span id="opt1"></span></label>
-          <label class="option"><input type="radio" name="option" value="2" /> <span id="opt2"></span></label>
-          <label class="option"><input type="radio" name="option" value="3" /> <span id="opt3"></span></label>
-          <button id="nextButton" class="next-btn" onclick="loadNextQuestion();">Next Question</button>
-      </div>
+<html>
 
+<head>
+  <title>Quiz</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="quizContainer" class="container">
+    <div class="title">Javascript Quiz</div>
+    <div id="question" class="question"></div>
+    <label class="option"><input type="radio" name="option" value="1" /> <span id="opt1"></span></label>
+    <label class="option"><input type="radio" name="option" value="2" /> <span id="opt2"></span></label>
+    <label class="option"><input type="radio" name="option" value="3" /> <span id="opt3"></span></label>
+    <button id="nextButton" class="next-btn" onclick="loadNextQuestion();">
+      Next Question
+    </button>
+    <div class="row">
+      <div class="col-md-12">
+        <h2 id="time">Time Remaining: <span id="timer">30</span></h2>
+      </div>
     </div>
-		<div class="row">
-			<div class="col-md-12">
-				<h2 id="time">Time Remaining: <span id="timer"></span></h2>
-			</div>
-      <div id="result" class="container result" style="display:none;">
-      </div>
-      <script src="script.js"></script>
-      
+  </div>
+
+  <div id="resultsContainer" class="container result" style="display: none;">
+    <h2>Congratulations! You scored<span id="userScore"></span></h2>
+    <div id="scoreOne"></div>
+    <div id="scoreTwo"></div>
+    <div id="scoreThree"></div>
+
+    <form id="form" class="hide">
+      <h2>Enter your initials here</h2>
+      <input id="inputField" type="text" placeholder="Initials">
+      <button>Submit</button>
+  </form>
+  </div>
+</div>
 
 
+  </div>
 
+  <script src="script.js"></script>
+</body>
 
-
-    </body>
-  </html>
+</html>

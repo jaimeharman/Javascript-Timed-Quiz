@@ -2,7 +2,8 @@ var currentQuestion = 0;
 var score = 0; 
  
 
-var container = document.getElementById('quizContainer');
+var quizContainer = document.getElementById('quizContainer');
+var resultsContainer = document.getElementById('resultsContainer');
 var questionEl = document.getElementById('question');
 var opt1 = document.getElementById('opt1');
 var opt2 = document.getElementById('opt2');
@@ -10,6 +11,7 @@ var opt3 = document.getElementById('opt3');
 var nextButton = document.getElementById('nextButton');
 var resultCont = document.getElementById('result'); 
 var timer = document.getElementById('timer');
+
 
 var questions = [{
     question: "Who invented Javascript?",
@@ -37,6 +39,22 @@ var questions = [{
 }];
 
 var totQuestions = questions.length;
+var secondsLeft = 30;
+function startTimer () {
+    var timerInterval = setInterval(function() {
+        secondsLeft--;
+        timer.textContent = secondsLeft;
+    if(secondsLeft === 0) { //when the timer reaches 0
+        clearInterval(timerInterval); //stop the timer...
+        timer.textContent = ("Time's up!") //...and display this text
+        }
+    // else if (finishQuiz) {
+    //   clearInterval(timerInterval) //if the quiz is finished, stop the timer
+    // }
+    }, 1000); //timer counts down by 1 second
+      }
+
+
 function loadQuestion (questionIndex) {
      var q = questions[questionIndex]; 
     questionEl.textContent = (questionIndex + 1) + '.' + q.question;
@@ -62,12 +80,12 @@ function loadNextQuestion () {
         nextButton.textContent = 'Finish';
     }
     if(currentQuestion == totQuestions){
-        container.style.display = 'none';
-        resultCont.style.display = '';
+        quizContainer.style.display = 'none';
+        resultsContainer.style.display = '';
         resultCont.textContent = 'Your Score: ' + score; 
         return; 
     }
     loadQuestion(currentQuestion);
 }
-
+startTimer();
 loadQuestion(currentQuestion);
