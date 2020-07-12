@@ -11,8 +11,11 @@ var nextButton = document.getElementById('nextButton');
 var resultCont = document.getElementById('result'); 
 
 function loadQuestion (questionIndex) {
-    
-}
+     var q = questions[questionIndex]; 
+    questionEl.textContent = (questionIndex + 1) + '.' + q.question;
+    opt1.textContent = q.option1; 
+    opt2.textContent = q.option2;
+    opt3.textContent = q.option3;
 
                
 
