@@ -60,8 +60,8 @@ body {
     height: 35px; 
     border-radius: 20px;
     cursor: pointer;
-    float: right; 
     margin: 10px; 
+    
 }
 
 .next-Btn:hover{
