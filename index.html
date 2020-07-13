@@ -4,7 +4,9 @@
 <head>
   <title>Quiz</title>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -15,6 +17,7 @@
     <label class="option"><input type="radio" name="option" value="1" /> <span id="opt1"></span></label>
     <label class="option"><input type="radio" name="option" value="2" /> <span id="opt2"></span></label>
     <label class="option"><input type="radio" name="option" value="3" /> <span id="opt3"></span></label>
+    <label class="option"><input type="radio" name="option" value="4" /> <span id="opt4"></span></label>
     <button id="nextButton" class="next-btn" onclick="loadNextQuestion();">
       Next Question
     </button>
@@ -24,24 +27,18 @@
       </div>
     </div>
   </div>
-
   <div id="resultsContainer" class="container result" style="display: none;">
-    <h2>Congratulations! You scored<span id="userScore"></span></h2>
+    <h2>Congratulations!&nbsp;<span id="scoreContainer"></span></h2>
     <div id="scoreOne"></div>
     <div id="scoreTwo"></div>
     <div id="scoreThree"></div>
-
-    <form id="form" class="hide">
+    <form id="form" class="hide" onsubmit="return false">
       <h2>Enter your initials here</h2>
       <input id="inputField" type="text" placeholder="Initials">
-      <button>Submit</button>
+      <button onclick="submitInitials()">Submit</button>
   </form>
   </div>
 </div>
-
-
-  </div>
-
   <script src="script.js"></script>
 </body>
 

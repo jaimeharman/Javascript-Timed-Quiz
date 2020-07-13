@@ -1,23 +1,25 @@
 var currentQuestion = 0; 
 var score = 0; 
  
-
+//Select elements from HTML
 var quizContainer = document.getElementById('quizContainer');
 var resultsContainer = document.getElementById('resultsContainer');
 var questionEl = document.getElementById('question');
 var opt1 = document.getElementById('opt1');
 var opt2 = document.getElementById('opt2');
 var opt3 = document.getElementById('opt3');
+var opt4 = document.getElementById('opt4');
 var nextButton = document.getElementById('nextButton');
-var resultCont = document.getElementById('result'); 
+var scoreContainer = document.getElementById('scoreContainer'); 
 var timer = document.getElementById('timer');
 
-
+//Questions
 var questions = [{
     question: "Who invented Javascript?",
     option1: "Douglas Crawford",
     option2: "Sheryl Sandberg",
     option3: "Brenden Eich",
+    option4: "John Resig",
     answer: "3"
 },
 {
@@ -26,6 +28,7 @@ var questions = [{
     option1: "client-side scripting language",
     option2: "client and server-side scripting language",
     option3: "text-based scripting language",
+    option4: "styling language",
     answer: "2"
 },
 
@@ -34,25 +37,28 @@ var questions = [{
     option1: "boolean",
     option2: "header",
     option3: "border-radius",
+    option4: "font-family",
     answer: "1"
 
 }];
 
 var totQuestions = questions.length;
+
 var secondsLeft = 30;
 function startTimer () {
     var timerInterval = setInterval(function() {
         secondsLeft--;
         timer.textContent = secondsLeft;
-    if(secondsLeft === 0) { //when the timer reaches 0
-        clearInterval(timerInterval); //stop the timer...
-        timer.textContent = ("Time's up!") //...and display this text
+    if(secondsLeft === 0) { 
+        clearInterval(timerInterval); 
+        timer.textContent = ("Time's up!") 
         }
     // else if (finishQuiz) {
-    //   clearInterval(timerInterval) //if the quiz is finished, stop the timer
+    //   clearInterval(timerInterval) 
     // }
-    }, 1000); //timer counts down by 1 second
+    }, 1000); 
       }
+
 
 
 function loadQuestion (questionIndex) {
@@ -60,7 +66,8 @@ function loadQuestion (questionIndex) {
     questionEl.textContent = (questionIndex + 1) + '.' + q.question;
     opt1.textContent = q.option1; 
     opt2.textContent = q.option2;
-    opt3.textContent = q.option3;
+    opt3.textContent = q.option3
+    opt4.textContent = q.option4;
 };
 
 function loadNextQuestion () {
@@ -82,10 +89,18 @@ function loadNextQuestion () {
     if(currentQuestion == totQuestions){
         quizContainer.style.display = 'none';
         resultsContainer.style.display = '';
-        resultCont.textContent = 'Your Score: ' + score; 
+        scoreContainer.textContent = 'Your Score:' + score; 
         return; 
     }
     loadQuestion(currentQuestion);
 }
 startTimer();
 loadQuestion(currentQuestion);
+
+function submitInitials() {
+    var name = document.getElementById('inputField').value;
+    console.log (name)
+    //Set name to local storage
+    //Pull information from local storage and append to scoreOne, scoreTwo, scoreThree
+    //Win!
+}

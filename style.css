@@ -6,24 +6,25 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh; 
-    background-color: #005582;
+    background-color: #0086ad;
 }
 
 .container {
-    background-color: #0086ad;
+    background-color: #00c2c7;
     height: 600px; 
     width: 1200px;
     border-radius: 20px;
     padding: 20px;
-    box-shadow: 2px darkgrey;
+    position: absolute;
+    box-shadow: box-shadow: 5px 10px 8px #888;
 }
 
 .title {
     padding-top: 20px;
     text-align: center;
-    font-size: 36px; 
+    font-size: 32px; 
     text-transform: uppercase; 
-    color: #daf8e3;
+    color: white;
 
 }
 
@@ -44,10 +45,12 @@ body {
     margin: 10px 0 10px 10px; 
     color: black; 
     border-radius: 20px; 
+    vertical-align: middle;
+
 }
 
 .option:hover {
-    background: #97ebdb;
+    background: #daf8e3;
     color: black; 
     
 }
@@ -57,10 +60,11 @@ body {
     outline: none; 
     background: #00c2c7;
     width: 100px;
-    height: 35px; 
+    height: 45px; 
     border-radius: 20px;
     cursor: pointer;
-    margin: 10px; 
+    margin: 10px;
+    float: right;  
     
 }
 
