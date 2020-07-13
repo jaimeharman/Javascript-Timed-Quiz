@@ -43,7 +43,7 @@ var questions = [{
 }];
 
 var totQuestions = questions.length;
-
+//Timer starts at 30 seconds and counts down; 
 var secondsLeft = 30;
 function startTimer () {
     var timerInterval = setInterval(function() {
@@ -60,7 +60,7 @@ function startTimer () {
       }
 
 
-
+//Question is loaded and the options are displayed for user to select from
 function loadQuestion (questionIndex) {
      var q = questions[questionIndex]; 
     questionEl.textContent = (questionIndex + 1) + '.' + q.question;
@@ -69,23 +69,25 @@ function loadQuestion (questionIndex) {
     opt3.textContent = q.option3
     opt4.textContent = q.option4;
 };
-
+//User can only select from options given and if user does not answer, alert will pop up asking user to answer question
 function loadNextQuestion () {
     var selectedOption = document.querySelector('input[type=radio]:checked');
     if(!selectedOption){
         alert('Please select your answer!');
         return; 
     }
+//If the correct answer is selected, score will increase
     var answer = selectedOption.value; 
     if(questions[currentQuestion].answer === answer){
         score+=1; 
     }
-
+//If question is wrong, no score will be added and user will click next button to continue the quiz
     selectedOption.checked = false; 
     currentQuestion++; 
     if(currentQuestion == totQuestions -1){
         nextButton.textContent = 'Finish';
     }
+//At the end of the quiz, results will be displayed for user
     if(currentQuestion == totQuestions){
         quizContainer.style.display = 'none';
         resultsContainer.style.display = '';
@@ -94,13 +96,18 @@ function loadNextQuestion () {
     }
     loadQuestion(currentQuestion);
 }
+//Calling functions
 startTimer();
 loadQuestion(currentQuestion);
-
+//Submit initials function on HTML
 function submitInitials() {
     var name = document.getElementById('inputField').value;
-    console.log (name)
-    //Set name to local storage
-    //Pull information from local storage and append to scoreOne, scoreTwo, scoreThree
-    //Win!
+//Set name to local storage
+
+
+//Pull information from local storage and append to scoreOne, scoreTwo, scoreThree
+
+
+
+//Win!
 }
