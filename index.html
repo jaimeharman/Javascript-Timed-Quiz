@@ -27,15 +27,12 @@
   </div>
   <div id="resultsContainer" class="container result" style="display: none;">
     <h2>Congratulations!&nbsp;<span id="scoreContainer"></span></h2>
-    <div id="scoreOne"></div>
-    <div id="scoreTwo"></div>
-    <div id="scoreThree"></div>
     <form id="form" class="hide" onsubmit="return false">
       <input id="inputField" type="text" placeholder="Initials" style="font-size:initial;">
       <button onclick="submitInitials()" style="font-size:initial;">Submit</button>
     </form>
     <div>
-      <button type="button" class="btn btn-outline-dark" onclick="location.reload()">Try Again</button>
+      <button type="button" class="btn btn-outline-dark" id="again">Try Again</button>
     </div>
   </div>
   </div>
