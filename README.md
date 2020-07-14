@@ -1,4 +1,4 @@
-#Timed Quiz
+##Timed Quiz
 - Created a responsive, timed quiz in Javascript. 
 - Has a timer.
 - Updates html via the javascript.
@@ -11,11 +11,11 @@
 - User can get list of high scores.
 - User can restart the quiz.
 
-#Planning
+##Planning
 - Pseudo Code to help layout HTML and CSS - what page will look like and how it will be styled
 - Pseudo Code to help layout working parts/pieces of Javascript
 - Using youtube videos and other websites to understand what I needed and how to make it operate within my code
 
-#Issues
+##Issues
 - This was a difficult assignment where I felt like I needed a lot of help - tutor, web videos and fellow classmates
 - One of the hardest parts was creating the high scores, adding them to local storage and then getting the scores to display
