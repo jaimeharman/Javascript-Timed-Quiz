@@ -79,7 +79,7 @@ function loadNextQuestion () {
 //If the correct answer is selected, score will increase
     var answer = selectedOption.value; 
     if(questions[currentQuestion].answer === answer){
-        score+=1; 
+        score+=5; 
     }
 //If question is wrong, no score will be added and user will click next button to continue the quiz
     selectedOption.checked = false; 
@@ -96,9 +96,6 @@ function loadNextQuestion () {
     }
     loadQuestion(currentQuestion);
 }
-//Calling functions
-startTimer();
-loadQuestion(currentQuestion);
 
 //Submit initials function on HTML
 function submitInitials() {
@@ -114,14 +111,21 @@ var scoreObj = {
     name: name,
     score: score
 }
-var storageScore = JSON.parse(window.localStorage.getItem('highScore'));//localStorage.getItem(JSON.stringify("highScore"));
+//storageScore is all the information in local storage
+var storageScore = JSON.parse(window.localStorage.getItem('highScore'));
 console.log(storageScore)
-highScoreArray.push(storageScore, scoreObj);
-// localStorage.setItem("highScore", "")
+
+//iterate through storageScore and add information to highScoreArray
+for ( var i = 0; i < storageScore.length; i++) {
+    highScoreArray.push(storageScore[i])
+}
+//Add new score to highScoreArray
+highScoreArray.push(scoreObj);
+
+//Push all scores into local storage
 localStorage.setItem("highScore", JSON.stringify(highScoreArray));
 
-var totalStorageScore = JSON.parse(window.localStorage.getItem('highScore'));//localStorage.getItem(JSON.stringify("highScore"));
-
+var totalStorageScore = JSON.parse(window.localStorage.getItem('highScore'));
 console.log(totalStorageScore)
 
 //Target score Id and set it's HTML to local storage objects name and score
@@ -129,10 +133,8 @@ document.getElementById("scoreOne").innerHTML = totalStorageScore[0].name + " " 
 document.getElementById("scoreTwo").innerHTML = totalStorageScore[1].name + " " + totalStorageScore[1].score;
 document.getElementById("scoreThree").innerHTML = totalStorageScore[2].name + " " + totalStorageScore[2].score;
 
-
-
-
-
 }
 
-
+//Calling functions
+startTimer();
+loadQuestion(currentQuestion);
