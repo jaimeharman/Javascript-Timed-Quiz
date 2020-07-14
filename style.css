@@ -6,11 +6,11 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh; 
-    background-color: #0086ad;
+    background-color: 		#66545e;
 }
 
 .container {
-    background-color: #00c2c7;
+    background-color: #aa6f73;
     height: 600px; 
     width: 1200px;
     border-radius: 20px;
@@ -50,7 +50,7 @@ body {
 }
 
 .option:hover {
-    background: #daf8e3;
+    background: #f6e0b5;
     color: black; 
     
 }
@@ -58,7 +58,7 @@ body {
 .next-Btn{
     border: none; 
     outline: none; 
-    background: #00c2c7;
+    background: #eea990;
     width: 100px;
     height: 45px; 
     border-radius: 20px;
@@ -69,12 +69,12 @@ body {
 }
 
 .next-Btn:hover{
-    background: #97ebdb;
+    background: #f6e0b5;
     color: black; 
 }
 
 .result{
-    height: 100px;
+    height: 400px;
     text-align: center; 
     font-size: 60px;
 }
@@ -84,6 +84,9 @@ body {
     color: black; 
 
 }
+
+
+
 
 
 

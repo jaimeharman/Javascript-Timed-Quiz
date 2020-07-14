@@ -99,15 +99,40 @@ function loadNextQuestion () {
 //Calling functions
 startTimer();
 loadQuestion(currentQuestion);
+
 //Submit initials function on HTML
 function submitInitials() {
     var name = document.getElementById('inputField').value;
-//Set name to local storage
+    console.log(name);
 
+//Set name to local storage
+localStorage.setItem('initials', name);
 
 //Pull information from local storage and append to scoreOne, scoreTwo, scoreThree
-
-
-
-//Win!
+var highScoreArray = [];
+var scoreObj = {
+    name: name,
+    score: score
 }
+var storageScore = JSON.parse(window.localStorage.getItem('highScore'));//localStorage.getItem(JSON.stringify("highScore"));
+console.log(storageScore)
+highScoreArray.push(storageScore, scoreObj);
+// localStorage.setItem("highScore", "")
+localStorage.setItem("highScore", JSON.stringify(highScoreArray));
+
+var totalStorageScore = JSON.parse(window.localStorage.getItem('highScore'));//localStorage.getItem(JSON.stringify("highScore"));
+
+console.log(totalStorageScore)
+
+//Target score Id and set it's HTML to local storage objects name and score
+document.getElementById("scoreOne").innerHTML = totalStorageScore[0].name + " " + totalStorageScore[0].score;
+document.getElementById("scoreTwo").innerHTML = totalStorageScore[1].name + " " + totalStorageScore[1].score;
+document.getElementById("scoreThree").innerHTML = totalStorageScore[2].name + " " + totalStorageScore[2].score;
+
+
+
+
+
+}
+
+
