@@ -43,6 +43,7 @@ var questions = [{
 }];
 
 var totQuestions = questions.length;
+
 //Timer starts at 30 seconds and counts down; 
 var secondsLeft = 30;
 function startTimer () {
