@@ -18,4 +18,4 @@ Planning
 
 Issues
 - This was a difficult assignment where I felt like I needed a lot of help - tutor, web videos and fellow classmates
-- One of the hardest parts was creating the high scores, adding them to local storage and then getting the scores to display
+- One of the hardest parts was creating the high scores, adding them to local storage and then getting the scores to display. 

@@ -67,6 +67,7 @@ function loadQuestion(questionIndex) {
     opt3.textContent = q.option3
     opt4.textContent = q.option4;
 };
+
 //User can only select from options given and if user does not answer, alert will pop up asking user to answer question
 function loadNextQuestion() {
     var selectedOption = document.querySelector('input[type=radio]:checked');
@@ -95,61 +96,47 @@ function loadNextQuestion() {
     
     loadQuestion(currentQuestion);
 }
+
 var highScoreArray = [];
 var scoreText = document.getElementById("resultsContainer");
+
 //Submit initials function on HTML
 function submitInitials() {
     var name = document.getElementById('inputField').value;
     console.log(name);
 
-    //Set name to local storage
-    localStorage.setItem('initials', name);
-
-    //Pull information from local storage and append to scoreOne, scoreTwo, scoreThree
-    
     var scoreObj = {
         name: name,
         score: score
     }
+
     //storageScore is all the information in local storage
-    // var storageScore = JSON.parse(window.localStorage.getItem('highScore'));
-    // console.log(storageScore)
+    var storageScore = JSON.parse(window.localStorage.getItem('highScore'));
 
     //iterate through storageScore and add information to highScoreArray
-    // for (var i = 0; i < storageScore.length; i++) {
-    //     highScoreArray.push(storageScore[i])
-   
-    // }
+    for (var i = 0; i < storageScore.length; i++) {
+        highScoreArray.push(storageScore[i])
+    }
     
     //Add new score to highScoreArray
     highScoreArray.push(scoreObj);
-         highScoreArray.sort(function (a, b) {
-            return b.score - a.score
-        });
+
+    // sort highScoreArray
+    highScoreArray.sort(function (a, b) {
+        return b.score - a.score
+    });
     highScoreArray.splice(3)
+    
     //Push all scores into local storage
     localStorage.setItem("highScore", JSON.stringify(highScoreArray));
 
     var totalStorageScore = JSON.parse(window.localStorage.getItem('highScore'));
     console.log(totalStorageScore)
     
-    for (i = 0; i < totalStorageScore.length; i++) {
-        var scoreTxt = document.createElement("p");
-        scoreTxt.innerHTML = highScoreArray[i].name + " " + highScoreArray[i].score;
-        scoreText.appendChild(scoreTxt)
-
-    };
+    for (var i = 0; i < totalStorageScore.length; i++) {
+        document.getElementById('highScore-' + i).innerHTML = highScoreArray[i].name + " " + highScoreArray[i].score;
+    }
 }
-var reset = document.getElementById('again');
-    reset.addEventListener("click", function(event) {
-        event.preventDefault();
-        currentQuestion = 0;
-        score = 0;
-        secondsLeft = 30;
-        quizContainer.style.display = "";
-        loadQuestion(currentQuestion);
-        scoreText.style.display = "none";
-    });
 
 //Calling functions
 startTimer();

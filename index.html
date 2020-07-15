@@ -25,14 +25,27 @@
       </div>
     </div>
   </div>
-  <div id="resultsContainer" class="container result" style="display: none;">
-    <h2>Congratulations!&nbsp;<span id="scoreContainer"></span></h2>
+  <div id="resultsContainer" class="container" style="display: none; text-align: center;">
+    <div class="row">
+      <h2 class="col-md-12" style="text-align: center;">Congratulations!&nbsp;<span id="scoreContainer"></span></h2>
+    </div>
+    <div class="row" id="highScoreContainer">
+      <div class="col-md-12">
+        <div>1.&nbsp;<span id='highScore-0'></span></div>
+        <div>2.&nbsp;<span id='highScore-1'></span></div>
+        <div>3.&nbsp;<span id='highScore-2'></span></div>
+      </div>
+    </div>
+    <div class="row"></div>
     <form id="form" class="hide" onsubmit="return false">
       <input id="inputField" type="text" placeholder="Initials" style="font-size:initial;">
       <button onclick="submitInitials()" style="font-size:initial;">Submit</button>
     </form>
+  </div>
+
+
     <div>
-      <button type="button" class="btn btn-outline-dark" id="again">Try Again</button>
+      <button type="button" class="btn btn-outline-dark" id="again" onclick="location.reload()">Try Again</button>
     </div>
   </div>
   </div>
